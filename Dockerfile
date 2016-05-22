@@ -48,14 +48,12 @@ RUN apk --update add \
     && apk add ${ALPINE_GLIBC_PACKAGE} ${ALPINE_GLIBC_BIN_PACKAGE} ${ALPINE_GLIBC_I18N_PACKAGE} \
     && rm /tmp/* /var/cache/apk/* \
     && /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8 \
-    && cat /etc/nsswitch.conf \
     && echo 'export PATH=$PATH:${JAVA_HOME}/bin' >> /etc/profile.d/java.sh \
     && ssh-keyscan $SSH_KNOWN_HOSTS | tee /etc/ssh/ssh_known_hosts \
-    && cd \
     && echo 'Done'
 
 COPY wrapper.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/wrapper.sh && echo 'Wrapper'
+RUN chmod +x /usr/local/bin/wrapper.sh
 
 ENTRYPOINT []
 CMD []
