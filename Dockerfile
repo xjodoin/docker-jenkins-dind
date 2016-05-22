@@ -24,21 +24,17 @@ RUN apk --update add \
     bzip2 \
     ca-certificates \
     git \
-    groff \
     jq \
     less \
     make \
     libsm \
     libstdc++ \
-    libxext \
-    libxrender \
     openjdk8 \
     openssh-client \
     perl \
     py-pip \
     python \
     python3 \
-    readline \
     unzip \
     && cd /tmp \
     && apk add --update --repository ${ALPINE_EDGE_COMMUNITY_REPO} tini \
