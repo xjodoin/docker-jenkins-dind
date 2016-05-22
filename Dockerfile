@@ -27,9 +27,9 @@ RUN apk --update add \
     glib \
     jq \
     less \
-    make \
     libsm \
     libstdc++ \
+    make \
     openjdk8 \
     openssh-client \
     perl \
