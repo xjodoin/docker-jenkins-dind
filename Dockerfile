@@ -24,6 +24,7 @@ RUN apk --update add \
     bzip2 \
     ca-certificates \
     git \
+    glib \
     jq \
     less \
     make \
