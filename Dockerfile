@@ -14,8 +14,9 @@ ENV ALPINE_EDGE_COMMUNITY_REPO=http://dl-cdn.alpinelinux.org/alpine/edge/communi
     LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
-    PATH=${PATH}:${JAVA_HOME}/bin \
     SSH_KNOWN_HOSTS=github.com
+
+ENV PATH=${PATH}:${JAVA_HOME}/bin
 
 # Please keep each package list in alphabetical order
 RUN apk --update add \
