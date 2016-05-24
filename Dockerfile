@@ -36,6 +36,7 @@ RUN apk --update add \
     py-pip \
     python \
     python3 \
+    tar \
     unzip \
     && cd /tmp \
     && apk add --update --repository ${ALPINE_EDGE_COMMUNITY_REPO} tini \
