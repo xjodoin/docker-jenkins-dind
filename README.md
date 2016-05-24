@@ -1,8 +1,8 @@
 # Jenkins Docker-in-Docker Agent
 [![Docker Stars](https://img.shields.io/docker/stars/mesosphere/jenkins-dind.svg)][docker-hub]
 [![Docker Pulls](https://img.shields.io/docker/pulls/mesosphere/jenkins-dind.svg)][docker-hub]
-[![Image Size](https://img.shields.io/imagelayers/image-size/mesosphere/jenkins-dind/0.2.2.svg)](https://imagelayers.io/?images=mesosphere/jenkins-dind:0.2.2)
-[![Image Layers](https://img.shields.io/imagelayers/layers/mesosphere/jenkins-dind/0.2.2.svg)](https://imagelayers.io/?images=mesosphere/jenkins-dind:0.2.2)
+[![Image Size](https://img.shields.io/imagelayers/image-size/mesosphere/jenkins-dind/0.3.0.svg)](https://imagelayers.io/?images=mesosphere/jenkins-dind:0.3.0)
+[![Image Layers](https://img.shields.io/imagelayers/layers/mesosphere/jenkins-dind/0.3.0.svg)](https://imagelayers.io/?images=mesosphere/jenkins-dind:0.3.0)
 
 A simple Docker image for running a Jenkins agent alongside its very
 own Docker daemon. This is useful if you're trying to run Jenkins agents on a
@@ -42,7 +42,7 @@ Mesos plugin within the Jenkins master's `config.xml` follows:
   <jnlpArgs/>
   <containerInfo>
     <type>DOCKER</type>
-    <dockerImage>mesosphere/jenkins-dind:0.1.5</dockerImage>
+    <dockerImage>mesosphere/jenkins-dind:0.3.0</dockerImage>
     <networking>BRIDGE</networking>
     <useCustomDockerCommandShell>true</useCustomDockerCommandShell>
     <customDockerCommandShell>wrapper.sh</customDockerCommandShell>
