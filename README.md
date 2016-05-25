@@ -18,7 +18,7 @@ Try it out locally by running the following command:
 
 ```bash
 docker run --privileged mesosphere/jenkins-dind \
-  wrapper.sh java -version && docker run hello-world
+  wrapper.sh "java -version && docker run hello-world"
 ```
 
 ### Jenkins
