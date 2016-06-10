@@ -43,6 +43,7 @@ RUN apk --update add \
     pip \
     setuptools \
     virtualenv \
+    wheel \
     && apk add --update --repository ${ALPINE_EDGE_COMMUNITY_REPO} tini \
     && wget -q -O /etc/apk/keys/sgerrand.rsa.pub "${ALPINE_GLIBC_RSA_PUB_URL}" \
     && wget -q "${ALPINE_GLIBC_BASE_URL}/${ALPINE_GLIBC_PACKAGE}" \
