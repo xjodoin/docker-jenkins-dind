@@ -1,6 +1,4 @@
 #!/bin/bash
-#DOCKER_IMAGE="jenkins-dind-dev"
-#GIT_SHA_10=$(echo $GIT_COMMIT | cut -c 1-10)
 GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 TAG=${GIT_BRANCH#*/}
 
