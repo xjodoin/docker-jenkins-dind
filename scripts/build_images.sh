@@ -3,10 +3,11 @@ GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 TAG=${GIT_BRANCH#*/}
 
 function usage() {
-    echo "$0 <image name>"
+    echo "$0 <image name> [yes]"
     echo "build Jenkins DIND Agent docker images."
     echo ""
     echo "<image name> is the image name, with prefix."
+    echo "[yes] is optional; include to also push images to docker hub."
     echo ""
     exit -1
 }
@@ -28,6 +29,14 @@ function dock_build {
     
     echo "Building $image:$tag ..."
     docker build -t $image:$tag -f $file .
+}
+
+function dock_push {
+    local image=$1
+    local tag=$2
+
+    echo "Pushing $image:$tag ..."
+    docker push $image:$tag
 }
 
 function build_images() {
@@ -52,7 +61,12 @@ function build_images() {
         final_tag="$TAG${tag_suffix}"
 
         dock_build "$image_name" "$final_tag" "$i"
+
+        if [ "x$2" == "xyes" ]
+        then
+            dock_push "$image_name" "$final_tag"
+        fi
     done
 }
 
-build_images $1
+build_images $1 $2
