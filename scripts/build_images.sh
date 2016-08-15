@@ -3,11 +3,12 @@ GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 TAG=${GIT_BRANCH#*/}
 
 function usage() {
-    echo "$0 <image name> [yes]"
+    echo "$0 <image name> [yes] [tag prefix]"
     echo "build Jenkins DIND Agent docker images."
     echo ""
     echo "<image name> is the image name, with prefix."
     echo "[yes] is optional; include to also push images to docker hub."
+    echo "[tag prefix] is optional; include to overwrite using the git branch."
     echo ""
     exit -1
 }
@@ -47,6 +48,11 @@ function build_images() {
         image_name="$1"
     fi
 
+    if [ "x$3" != "x" ]
+    then
+        TAG=$3
+    fi
+
     preflight
 
     for i in Dockerfile*
@@ -69,4 +75,4 @@ function build_images() {
     done
 }
 
-build_images $1 $2
+build_images $1 $2 $3
