@@ -16,7 +16,7 @@ RUN apt-get update -y       \
        jq                   \
        lvm2                 \
        lxc                  \
-       openjdk-8-jre-headless  \
+       openjdk-8-jdk-headless  \
        unzip                \
        zip
 
