@@ -9,14 +9,13 @@ RUN apt-get update -y       \
        build-essential      \
        bzip2                \
        ca-certificates      \
-       ca-certificates-java \
        curl                 \
        git                  \
        iptables             \
        jq                   \
        lvm2                 \
        lxc                  \
-       openjdk-8-jre-headless  \
+       openjdk-8-jdk-headless  \
        unzip                \
        zip
 
